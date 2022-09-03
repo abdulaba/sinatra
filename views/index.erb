@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Listado de restaurantes</h2>
+  <hr>
+  <a href="restaurants/new" class="btn btn-success">Agregar</a> <a href="/" class="btn btn-warning">Volver</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Tipo Comida</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.city%></td>
+        <td><%= restaurant.type_food%></td>
+        <td><a href="restaurants/<%= restaurant.id %>"><i class="fas fa-eye"></i></a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

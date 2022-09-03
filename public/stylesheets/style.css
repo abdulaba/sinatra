@@ -1,0 +1,77 @@
+.banner {
+  background-image: url(../img/r3.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.banner a{
+  border-radius: 5px;
+  align-items: center;
+}
+
+
+.footer {
+  position: sticky;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+.footer-copyright {
+  color: white;
+}
+
+.vista {
+  display: flex;
+}
+
+.detalle h3{
+  color: rgb(54, 6, 100);
+  padding-left: 13px;
+}
+.vista img {
+  width: 620px;
+}
+
+.detalle p{
+  padding-left: 13px;
+}
