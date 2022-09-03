@@ -13,9 +13,9 @@ end
 
 
 
-after do
-  ActiveRecord::Base.connection.close
-end
+# after do
+#   ActiveRecord::Base.connection.close
+# end
 
 
 
@@ -57,9 +57,10 @@ get "/restaurants/:id/edit" do
   erb :edit
 end
 
-patch "restaurants/:id" do
+patch "/restaurants/:id" do
   @restaurant = Restaurant.find(params[:id])
-  @restaurant.update(name: params[:name])
+  @restaurant.update(name: params[:name], address: params[:address], city: params[:city], phone_number: params[:phone_number], type_food: params[:type_food], image_url: params[:image_url])
+  redirect to "/restaurants/#{@restaurant.id}"
 end
 
 delete "/restaurants/:id" do 

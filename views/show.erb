@@ -10,10 +10,21 @@
     <p><%= @restaurant.city %></p>
     <p><%= @restaurant.address %></p>
     <p><%= @restaurant.phone_number %></p>
-    <form action="/restaurants/<%=@restaurant.id %>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Borrar" class="btn btn-danger mx-2">
-    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form action="/restaurants/<%=@restaurant.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Borrar" class="btn btn-danger mx-2">
+          </form>
+        </div>
+        <div class="col">
+          <a href="/restaurants/<%=@restaurant.id%>/edit" class="btn btn-warning">Editar</a>
+        </div>
+      </div>
+    </div>
+       
+        
   </div>
 </div>
 
