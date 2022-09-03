@@ -37,21 +37,5 @@ get "/restaurants/:id" do
   erb :show
 end
 
-get '/restaurants/:id/edit' do  #load edit form
-    @restaurant = Restaurant.find_by(id: params[:id])
-    erb :edit
-end
-
-patch '/restaurants/:id' do #update the article
-  @restaurant = Restaurant.find_by(id: params[:id])
-  @restaurant.update(name: params[:name])
-  redirect to "/restaurants"
-end
-
-delete '/' do
-  @restaurant = Restaurant.find(params[:id])
-  @restaurant.delete
-  redirect to "/restaurants"
-end
 
 
