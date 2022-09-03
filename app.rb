@@ -6,6 +6,20 @@ require "better_errors"
 require_relative "config/application"
 
 
+configure :development do
+  use Rack::MethodOverride
+end
+
+
+
+
+after do
+  ActiveRecord::Base.connection.close
+end
+
+
+
+
 get "/" do
   erb :home
 end
@@ -35,6 +49,22 @@ get "/restaurants/:id" do
   id = params[:id]
   @restaurant = Restaurant.find(id)
   erb :show
+end
+
+get "/restaurants/:id/edit" do
+  @restaurant = Restaurant.find(params[:id])
+
+  erb :edit
+end
+
+patch "restaurants/:id" do
+  @restaurant = Restaurant.find(params[:id])
+  @restaurant.update(name: params[:name])
+end
+
+delete "/restaurants/:id" do 
+  Restaurant.find(params[:id]).destroy!
+  redirect to "/restaurants"
 end
 
 
